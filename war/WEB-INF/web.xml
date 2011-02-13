@@ -4,19 +4,19 @@
     "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
-  
-  <!-- Servlets -->
-  <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>com.prueba.widgetagregarpersonas.server.GreetingServiceImpl</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/widgetagregarpersona/greet</url-pattern>
-  </servlet-mapping>
-  
-  <!-- Default page to serve -->
+<filter>
+		<filter-name>guiceFilter</filter-name>
+		<filter-class>com.google.inject.servlet.GuiceFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>guiceFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>com.example.hellogin.server.GuiceServletConfig</listener-class>
+	</listener>
   <welcome-file-list>
     <welcome-file>WidgetAgregarPersona.html</welcome-file>
   </welcome-file-list>
