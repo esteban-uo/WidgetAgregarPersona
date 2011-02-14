@@ -4,7 +4,7 @@
     "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
-<filter>
+	<filter>
 		<filter-name>guiceFilter</filter-name>
 		<filter-class>com.google.inject.servlet.GuiceFilter</filter-class>
 	</filter>
@@ -15,10 +15,10 @@
 	</filter-mapping>
 
 	<listener>
-		<listener-class>com.example.hellogin.server.GuiceServletConfig</listener-class>
+		<listener-class>com.prueba.widgetagregarpersonas.server.ModuloGuice</listener-class>
 	</listener>
-  <welcome-file-list>
-    <welcome-file>WidgetAgregarPersona.html</welcome-file>
-  </welcome-file-list>
+	<welcome-file-list>
+		<welcome-file>WidgetAgregarPersona.html</welcome-file>
+	</welcome-file-list>
 
 </web-app>

@@ -3,6 +3,7 @@ package com.prueba.widgetagregarpersonas.vista.controlador;
 import java.util.List;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.inject.Inject;
 import com.prueba.widgetagregarpersonas.client.entidades.Persona;
 import com.prueba.widgetagregarpersonas.client.rpc.IServicioPersonasAsync;
 import com.prueba.widgetagregarpersonas.vista.controlador.contratos.IControladorLista;
@@ -14,9 +15,11 @@ public class ControladorPrincipal implements IControladorPrincipal{
 	IServicioPersonasAsync _proveedorPersonas;
 	IControladorLista _generadorLista;
 	
+	@Inject
 	public ControladorPrincipal(IServicioPersonasAsync proveedorPersona, IControladorLista generadorLista) {
 		this._proveedorPersonas = proveedorPersona;
 		this._generadorLista = generadorLista;
+		cargarPersonas();
 	}
 	
 	@Override

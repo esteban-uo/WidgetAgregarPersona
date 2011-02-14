@@ -23,7 +23,6 @@ public class UILista extends Composite implements IListaDelegado {
 	interface UIListaUiBinder extends UiBinder<Widget, UILista> {
 	}
 	
-	
 	@UiField
 	Button botonAgregar;
 	@UiField
@@ -59,6 +58,4 @@ public class UILista extends Composite implements IListaDelegado {
 		result.setInnerHTML(valor);
 		return result;
 	}
-
-
 }
