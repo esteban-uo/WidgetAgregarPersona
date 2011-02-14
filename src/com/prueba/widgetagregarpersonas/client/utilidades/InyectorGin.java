@@ -2,7 +2,7 @@ package com.prueba.widgetagregarpersonas.client.utilidades;
 
 import com.google.gwt.inject.client.GinModules;
 import com.google.gwt.inject.client.Ginjector;
-import com.prueba.widgetagregarpersonas.vista.UILista;
+import com.prueba.widgetagregarpersonas.client.vista.UILista;
 
 
 @GinModules(ModuloGin.class)
