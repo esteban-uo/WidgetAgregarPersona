@@ -1,4 +1,4 @@
 - Crear Interfaces de contratos para controladores del widget
 - Implementar Interfaces en controladores
 - Implementar Contratos de Vista en GWT con UIBinders
-+ Configurar RPC y Guice
+- Configurar RPC y Guice
