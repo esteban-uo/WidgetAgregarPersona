@@ -12,7 +12,7 @@ public class ModuloGuice extends GuiceServletContextListener{
 		return Guice.createInjector(new ServletModule(){
 			@Override
 			protected void configureServlets() {
-				serve("/widgetagregarpersonas/serverpersonas")
+				serve("/widgetagregarpersona/serverpersonas")
 						.with(ServicioPersonas.class);
 			}
 		

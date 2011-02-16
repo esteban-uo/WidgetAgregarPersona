@@ -13,39 +13,42 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.inject.Inject;
 import com.prueba.widgetagregarpersonas.client.entidades.Persona;
 import com.prueba.widgetagregarpersonas.client.vista.contratos.IListaDelegado;
+import com.prueba.widgetagregarpersonas.client.vista.controlador.contratos.IControladorLista;
+import com.prueba.widgetagregarpersonas.client.vista.controlador.contratos.IControladorPrincipal;
 
 public class UILista extends Composite implements IListaDelegado {
-
 	private static UIListaUiBinder uiBinder = GWT.create(UIListaUiBinder.class);
+	interface UIListaUiBinder extends UiBinder<Widget, UILista> {}
+	
+	@UiField Button botonAgregar;
+	@UiField UListElement listaPersonas;
+	@UiField TextBox inputPersonas;
+	
+	@Inject IControladorPrincipal _controladorPrincipal;
+	@Inject IControladorLista _controladorLista;
 
-	interface UIListaUiBinder extends UiBinder<Widget, UILista> {
+	@Override
+	protected void onLoad() {
+		super.onLoad();
+		
+		_controladorLista.setListaDelegado(this);
+		_controladorPrincipal.cargarPersonas();
 	}
 	
-	@UiField
-	Button botonAgregar;
-	@UiField
-    UListElement listaPersonas;
-	@UiField
-	TextBox inputPersonas;
-
 	public UILista() {
 		initWidget(uiBinder.createAndBindUi(this));
 		botonAgregar.setText("Agregar Persona");
 	}
 
-	
-
 	@UiHandler("botonAgregar")
 	void onClick(ClickEvent e) {
-		
 	}
 
 	@Override
 	public void limpiarLista() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

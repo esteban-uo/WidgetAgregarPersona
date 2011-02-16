@@ -2,6 +2,7 @@ package com.prueba.widgetagregarpersonas.client.vista.controlador;
 
 import java.util.List;
 
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.inject.Inject;
 import com.prueba.widgetagregarpersonas.client.entidades.Persona;
@@ -9,43 +10,23 @@ import com.prueba.widgetagregarpersonas.client.rpc.IServicioPersonasAsync;
 import com.prueba.widgetagregarpersonas.client.vista.controlador.contratos.IControladorLista;
 import com.prueba.widgetagregarpersonas.client.vista.controlador.contratos.IControladorPrincipal;
 
-public class ControladorPrincipal implements IControladorPrincipal{
-	
-	
-	IServicioPersonasAsync _proveedorPersonas;
-	IControladorLista _generadorLista;
-	
-	@Inject
-	public ControladorPrincipal(IServicioPersonasAsync proveedorPersona, IControladorLista generadorLista) {
-		this._proveedorPersonas = proveedorPersona;
-		this._generadorLista = generadorLista;
-		cargarPersonas();
-	}
+public class ControladorPrincipal implements IControladorPrincipal {
+	@Inject IServicioPersonasAsync _servicioPersonas;
+	@Inject IControladorLista _controladorLista;
 	
 	@Override
 	public void cargarPersonas(){
-		_proveedorPersonas.obtenerPersonas(new AsyncCallback<List<Persona>>() {
+		_servicioPersonas.obtenerPersonas(new AsyncCallback<List<Persona>>() {
 			
 			@Override
 			public void onSuccess(List<Persona> result) {
-				// TODO Auto-generated method stub
-				_generadorLista.llenarListaPersonas(result);
+				_controladorLista.llenarListaPersonas(result);
 			}
 			
 			@Override
 			public void onFailure(Throwable caught) {
-					// TODO Auto-generated method stub
-				
+				Window.alert("Error en obtencion");	
 			}
 		});
-		// TODO Auto-generated method stub
-		
 	}
-
-	@Override
-	public void nuevaPersona() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
