@@ -9,5 +9,5 @@ import com.prueba.widgetagregarpersonas.client.entidades.Persona;
 @RemoteServiceRelativePath("serverpersonas")
 public interface IServicioPersonas extends RemoteService {
 	List<Persona> obtenerPersonas();
-	boolean agregarPersona(Persona persona);
+	Persona agregarPersona(String nombre);
 }

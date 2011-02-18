@@ -45,6 +45,7 @@ public class UILista extends Composite implements IListaDelegado {
 
 	@UiHandler("botonAgregar")
 	void onClick(ClickEvent e) {
+		_controladorPrincipal.agregarPersona(inputPersonas.getText());
 	}
 
 	@Override

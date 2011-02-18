@@ -29,4 +29,20 @@ public class ControladorPrincipal implements IControladorPrincipal {
 			}
 		});
 	}
+
+	@Override
+	public void agregarPersona(String nombre) {
+		_servicioPersonas.agregarPersona(nombre, new AsyncCallback<Persona>() {
+			
+			@Override
+			public void onSuccess(Persona result) {
+				_controladorLista.insertarPersona(result);
+			}
+			
+			@Override
+			public void onFailure(Throwable caught) {
+				Window.alert("Error de Inserción");
+			}
+		});
+	}
 }

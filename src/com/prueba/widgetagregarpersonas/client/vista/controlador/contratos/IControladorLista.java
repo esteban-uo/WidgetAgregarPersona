@@ -8,4 +8,5 @@ import com.prueba.widgetagregarpersonas.client.vista.contratos.IListaDelegado;
 public interface IControladorLista {
 	void llenarListaPersonas(List<Persona> personas);
 	void setListaDelegado(IListaDelegado listaDelegado);
+	void insertarPersona(Persona persona);
 }
