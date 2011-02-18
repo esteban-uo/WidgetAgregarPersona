@@ -12,8 +12,8 @@ public class ModuloGuice extends GuiceServletContextListener{
 		return Guice.createInjector(new ServletModule(){
 			@Override
 			protected void configureServlets() {
-				serve("/widgetagregarpersona/serverpersonas")
-						.with(ServicioPersonas.class);
+				serve("/widgetagregarpersona/serverpersonas").with(ServicioPersonasMongo.class);
+				serve("/widgetagregarpersona/serverpersonasarray").with(ServicioPersonasArray.class);
 			}
 		
 		});

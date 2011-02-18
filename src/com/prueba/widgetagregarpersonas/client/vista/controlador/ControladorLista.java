@@ -23,4 +23,10 @@ public class ControladorLista implements IControladorLista {
 		this.listaDelegado = listaDelegado;
 	}
 
+	@Override
+	public void insertarPersona(Persona persona) {
+		listaDelegado.asignarPersona(persona);
+		
+	}
+
 }
